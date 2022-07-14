@@ -69,10 +69,10 @@ public class ScClient : Listener, WebSocketDelegate {
                         self.onSetAuthentication?(self, authToken)
                     case .ackReceive:
                         
-                        handleEmitAck(id: rid!, error: error as AnyObject, data: data as AnyObject)
+                        handleEmitAck(id: rid ?? -1, error: error as AnyObject, data: data as AnyObject)
                     case .event:
-                        if hasEventAck(eventName: eventName!) {
-                            handleOnAckListener(eventName: eventName!, data: data as AnyObject, ack: self.ack(cid: cid!))
+                        if hasEventAck(eventName: eventName ?? "") {
+                            handleOnAckListener(eventName: eventName ?? "", data: data as AnyObject, ack: self.ack(cid: cid ?? -1))
                         } else {
                             handleOnListener(eventName: eventName!, data: data as AnyObject)
                         }

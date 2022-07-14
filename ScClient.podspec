@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "ScClient"
-  s.version      = "2.0.1"
+  s.name         = "SocketClusterClient"
+  s.version      = "2.0.2"
   s.summary      = "A socketcluster client for iOS and OSX."
   s.swift_version = '4.0'
 
